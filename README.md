@@ -10,26 +10,58 @@ Follow these instructions to get a copy of the project up and running on your lo
 
 Ensure you have the following software installed on your machine:
 - Python (version 3.x)
+- Pipenv
 - Django
 - Graphene-Django
 
-### Installation
+## Installation
 
+1. Clone the repository to your local machine:
 
-1. Create a virtual environment (optional but recommended):
-   python -m venv venv
+    ```
+    git clone <repository-url>
+    ```
 
-2. Activate the virtual environment:
-   - On Windows:
-     venv\Scripts\activate
-   - On macOS and Linux:
-     source venv/bin/activate
+2. Navigate to the project directory:
 
+    ```
+    cd project-directory
+    ```
+
+3. Create a virtual environment using Pipenv:
+
+    ```
+    pipenv install
+    ```
+
+4. Activate the virtual environment:
+
+    ```
+    pipenv shell
+    ```
+
+5. Install dependencies listed in the requirements.txt file:
+
+    ```
+    pipenv install -r requirements.txt
+    ```
+
+## Usage
 
 ### Database Setup
 
-1. Apply database migrations:
-   python manage.py migrate
+
+1. Make migrations for your Django project:
+
+    ```
+    python manage.py makemigrations
+    ```
+
+2. Apply migrations to your database:
+
+    ```
+    python manage.py migrate
+    ```
 
 ### Running the Development Server
 
@@ -47,9 +79,9 @@ You can access the GraphQL interface at `http://127.0.0.1:8000/graphql/`. This i
 The GraphQL schema defines the available queries and mutations for interacting with student data. You can explore the schema and execute queries/mutations using the GraphQL interface provided by Django.
 
 ### Example Query
-
+```
 query {
-  students {
+  all_students {
     id
     name
     age
@@ -80,6 +112,7 @@ mutation {
   }
 }
 
+```
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or submit a pull request.
